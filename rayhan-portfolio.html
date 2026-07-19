@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md. Abu Rayhan - Creative Digital Media Professional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f0f0f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2a2a2a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ff6b35;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .hero-content p {
+      color: #ffffff;
+      font-size: 16px;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: 300px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+    }
+
+    .highlight {
+      color: #ff6b35;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 32px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 3rem;
+      border-bottom: 3px solid #ff6b35;
+      padding-bottom: 1rem;
+      display: inline-block;
+      color: #ffffff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: #252525;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #ff6b35;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(255, 107, 53, 0.2);
+    }
+
+    .skill-card h3 {
+      font-size: 18px;
+      margin-bottom: 1rem;
+      color: #ff6b35;
+    }
+
+    .skill-card ul {
+      list-style: none;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .skill-card ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .skill-card ul li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #ff6b35;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-item {
+      background: #252525;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border-top: 3px solid #ff6b35;
+      transition: all 0.3s;
+    }
+
+    .service-item:hover {
+      background: #2a2a2a;
+      transform: translateY(-2px);
+    }
+
+    .service-item h4 {
+      font-size: 16px;
+      margin-bottom: 1rem;
+      color: #ff6b35;
+    }
+
+    .service-item p {
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .experience-item {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ff6b35;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-subtitle {
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-description {
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 140, 66, 0.1));
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 28px;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .contact-section p {
+      color: #ffffff;
+      margin-bottom: 2rem;
+      font-size: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 10px 20px;
+      background: #252525;
+      border: 2px solid #ff6b35;
+      color: #ff6b35;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .contact-link:hover {
+      background: #ff6b35;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #0f0f0f;
+      padding: 2rem;
+      text-align: center;
+      color: #ffffff;
+      border-top: 1px solid #2a2a2a;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      nav {
+        gap: 1rem;
+        font-size: 12px;
+      }
+
+      header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-image img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">R.</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="about">
+  <div class="hero-content">
+    <h1>Creative <span class="highlight">Digital Media</span> Professional</h1>
+    <p>I transform ideas into compelling visual stories through video editing, digital marketing strategy, and AI-powered creative solutions. Specializing in engaging content for brands and businesses.</p>
+    <a href="#contact" class="cta-button">Let's work together</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://via.placeholder.com/300x300/1a1a1a/ff6b35?text=Your+Photo" alt="Md. Abu Rayhan - Creative Professional">
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <h2 class="section-title">Core Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Video Editing</h3>
+      <ul>
+        <li>Adobe Premiere Pro</li>
+        <li>Adobe After Effects</li>
+        <li>Motion Graphics</li>
+        <li>Color Grading</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>Design & Graphics</h3>
+      <ul>
+        <li>Adobe Photoshop</li>
+        <li>Adobe Illustrator</li>
+        <li>Graphic Design</li>
+        <li>Visual Storytelling</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>AI & Creative Tech</h3>
+      <ul>
+        <li>AI Prompt Engineering</li>
+        <li>AI-Generated BGM</li>
+        <li>Sound Design</li>
+        <li>Workflow Optimization</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>Digital Marketing</h3>
+      <ul>
+        <li>Social Media Strategy</li>
+        <li>Content Creation</li>
+        <li>Audience Engagement</li>
+        <li>Campaign Management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2 class="section-title">What I Do</h2>
+  <div class="services-grid">
+    <div class="service-item">
+      <h4>Video Production</h4>
+      <p>Promotional videos, social media reels, commercial content, and customized visual projects that engage and convert.</p>
+    </div>
+    <div class="service-item">
+      <h4>Content Strategy</h4>
+      <p>Develop audience-focused digital marketing strategies and create compelling visual content across all platforms.</p>
+    </div>
+    <div class="service-item">
+      <h4>Digital Marketing</h4>
+      <p>Social media management, audience engagement strategies, and brand communication for optimal reach.</p>
+    </div>
+    <div class="service-item">
+      <h4>Graphic Design</h4>
+      <p>Eye-catching promotional materials, visual assets, and brand-aligned design solutions for your business.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <h2 class="section-title">Experience</h2>
+  
+  <div class="experience-item">
+    <div class="exp-title">Freelance Video Editor</div>
+    <div class="exp-subtitle">Khaas Food & Various Clients | 2022 – Present</div>
+    <div class="exp-description">Working with multiple clients to produce promotional videos, social media content, reels, and customized visual projects. Editing promotional and commercial video content for brand marketing campaigns.</div>
+  </div>
+
+  <div class="experience-item">
+    <div class="exp-title">Manager</div>
+    <div class="exp-subtitle">Life Care Diagnostic Center & Hospital | Nov 2024 – Mar 2026</div>
+    <div class="exp-description">Managed operational and administrative activities. Coordinated communication and workflow management. Assisted in digital promotional activities and media-related tasks.</div>
+  </div>
+
+  <div class="experience-item">
+    <div class="exp-title">Marketing Officer</div>
+    <div class="exp-subtitle">University of Skill Enrichment and Technology | Apr 2022 – Nov 2024</div>
+    <div class="exp-description">Designed social media posts and promotional materials. Edited marketing and promotional videos for online campaigns. Managed digital marketing activities and audience engagement strategies.</div>
+  </div>
+
+  <div class="experience-item">
+    <div class="exp-title">Executive, Social Communication</div>
+    <div class="exp-subtitle">Evaly | Jul 2020 – Aug 2021</div>
+    <div class="exp-description">Managed communication activities across social media pages and groups. Supervised comment moderation and ensured appropriate response strategies. Guided team members on communication tone and response quality.</div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact-section">
+    <h2>Ready to create something amazing?</h2>
+    <p>Let's collaborate and bring your creative vision to life</p>
+    <div class="contact-links">
+      <a href="mailto:rayhanrin8@gmail.com" class="contact-link">✉️ Email</a>
+      <a href="tel:+8801820820418" class="contact-link">📞 Call</a>
+      <a href="https://wa.me/8801820820418" class="contact-link">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Md. Abu Rayhan. All rights reserved. Based in Meghna, Cumilla, Bangladesh.</p>
+</footer>
+
+</body>
+</html>
