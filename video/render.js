@@ -1,24 +1,21 @@
-// Renders video/calendar-video.html frame by frame into MP4s.
-// Usage: node video/render.js [month=YYYY-MM] [fps=30]
-// Output: video/out/calendar-16x9.mp4, calendar-1x1.mp4, calendar-9x16.mp4
+// Renders video/calendar-video.html frame by frame into one square MP4.
+// The video's edges are the flat background colour #1a1a1a, so the same file
+// can be placed on a 16:9, 1:1 or 9:16 canvas filled with that colour.
+// Usage: node video/render.js [fps=30]
+// Output: video/out/calendar-thu-fri.mp4 (1080x1080)
 const { chromium } = require('playwright');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-const month = process.argv[2] || '';
-const fps = +(process.argv[3] || 30);
-const FORMATS = [
-  { name: '16x9', w: 1920, h: 1080 },
-  { name: '1x1', w: 1080, h: 1080 },
-  { name: '9x16', w: 1080, h: 1920 },
-];
+const fps = +(process.argv[2] || 30);
+const FORMATS = [{ name: 'thu-fri', w: 1080, h: 1080 }];
 const only = process.env.ONLY;
 
 (async () => {
   const outDir = path.join(__dirname, 'out');
   fs.mkdirSync(outDir, { recursive: true });
-  const url = 'file://' + path.join(__dirname, 'calendar-video.html') + (month ? '?month=' + month : '');
+  const url = 'file://' + path.join(__dirname, 'calendar-video.html');
   const shot = async (page) => {
     for (let k = 0; ; k++) {
       try { return await page.screenshot({ type: 'png' }); }
